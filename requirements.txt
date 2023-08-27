@@ -1,0 +1,8 @@
+opencv-python
+numpy
+imutils
+pytesseract
+easyocr
+paddleocr
+paddlepaddle
+python-doctr
