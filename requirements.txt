@@ -1,8 +1,10 @@
 opencv-python
+Pillow
 numpy
 imutils
 pytesseract
 easyocr
 paddleocr
 paddlepaddle
-python-doctr
+nltk
+pyenchant
