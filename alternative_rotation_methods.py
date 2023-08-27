@@ -19,24 +19,20 @@ def rotated_with_paddle_image(image):
     for _ in range(max_rotation_attempts):
         results = ocr.ocr(image)
 
-        # Algılanan metin sayısını bul
         text_count = sum([len(result) for result in results])
         print("text count:", text_count)
 
-        # En yüksek metin sayısına ulaşan rotasyonu bul
         if text_count > most_text_count:
             most_text_count = text_count
             best_rotation_angle = _ * 90
 
-        # Görüntüyü döndür
         image = np.rot90(image, 1)  # 90 derece döndür
         # cv2.imshow("Rotated Image", image)
         # cv2.waitKey(0)
         # cv2.destroyAllWindows()
-    print("En yüksek metin sayısı:", most_text_count)
-    print("En iyi rotasyon açısı:", best_rotation_angle)
+    print("Max text count:", most_text_count)
+    print("Best rotation angle:", best_rotation_angle)
 
-    # İlk görüntüyü en iyi rotasyon açısına döndürün
     rotated_image = np.rot90(image, best_rotation_angle // 90)
     return rotated_image
 
