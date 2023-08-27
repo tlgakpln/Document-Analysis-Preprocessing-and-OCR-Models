@@ -24,5 +24,6 @@ Everything is ready for OCR algorithms. I used three different models.
 > EasyOCR
 
 You can choose any models ouputs
-After just run!
+
+Just run!
 > ocr.py
