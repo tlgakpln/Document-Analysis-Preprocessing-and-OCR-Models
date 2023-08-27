@@ -21,7 +21,8 @@ If you want to best solve for rotation you should use
 Everything is ready for OCR algorithms. I used three different models.
 > Pytesseract
 > PaddleOCR
-> EasyOCR 
+> EasyOCR
+
 You can choose any models ouputs
 After just run!
 > ocr.py
