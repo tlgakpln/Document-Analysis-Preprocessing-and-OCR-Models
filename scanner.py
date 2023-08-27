@@ -44,15 +44,12 @@ def scan_detection(image):
 def add_background(image, border_size):
     image_height, image_width = image.shape[:2]
 
-    # Yeni genişlik ve yükseklik hesaplaması
     new_width = image_width + border_size
     new_height = image_height + border_size
 
-    # Yeni arka plan oluşturun
     background_color = (255, 255, 255)  # Beyaz arka plan rengi
     background = np.full((new_height, new_width, 3), background_color, dtype=np.uint8)
 
-    # Yeni arka planın ortasına orijinal görüntüyü yerleştirin
     x_offset = int((new_width - image_width) / 2)
     y_offset = int((new_height - image_height) / 2)
     background[y_offset:y_offset + image_height, x_offset:x_offset + image_width] = image
@@ -65,7 +62,7 @@ def find_cropped_image(image):
     warped = four_point_transform(scanned_image, document_contour.reshape(4, 2))
     warped_bordered = add_background(warped, 150)
     processed = image_processing(warped_bordered)
-    rotated = tesseract_rotate.rotate_with_tesseract(processed)
+    rotated = best_rotation_method.rotate_with_tesseract(processed)
     cv2.imwrite('outputs/gray_img.png', gray_img)
     cv2.imwrite('outputs/processed.png', processed)
     cv2.imwrite('outputs/rotated.png', rotated)
