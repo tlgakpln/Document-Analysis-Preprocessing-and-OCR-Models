@@ -11,6 +11,7 @@ You should download tesseract.exe
 You need to specify the place where you installed the tesseract from the paths.
 
 Original Image
+
 ![gray_img](https://github.com/tlgakpln/Document-Analysis-Preprocessing-and-OCR-Models/assets/46111780/beb1da3b-7579-4008-8f83-0360e4d6d2b5)
 
 If your image not in fullscreen and need any preprocess steps
